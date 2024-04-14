@@ -1,6 +1,6 @@
-from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.generics import GenericAPIView
 from .models import React
 from .serializer import AnimeSerializer
 
@@ -9,13 +9,13 @@ from .serializer import AnimeSerializer
 
 class MainPageView(APIView):
     def get(self, request):
-        output = [{'title': output.title}
+        output = [{'title': output.title, 'test': output.test}
                   for output in React.objects.all()]
         return Response(output)
 
     def post(self, request):
         serializer = AnimeSerializer(data=request.data)
-        if serializer.is_valid():
+        if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
 

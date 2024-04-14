@@ -5,4 +5,4 @@ from .models import *
 class AnimeSerializer(serializers.ModelSerializer):
     class Meta:
         model = React
-        fields = '__all__'
+        fields = ['title', 'test']
