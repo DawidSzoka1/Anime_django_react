@@ -27,6 +27,7 @@ router.register(r'main', mainPage_views.MainPageView, 'main')
 
 urlpatterns = [
     path('', include('mainPage.urls')),
+    path('', include('accounts.urls')),
     path('admin/', admin.site.urls),
 ]
 
