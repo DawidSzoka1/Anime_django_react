@@ -19,6 +19,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from rest_framework import routers
+from mainPage import views as mainPage_views
+
+router = routers.DefaultRouter()
+router.register(r'main', mainPage_views.MainPageView, 'main')
 
 urlpatterns = [
     path('', include('mainPage.urls')),
