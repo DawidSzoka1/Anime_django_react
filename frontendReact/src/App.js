@@ -1,6 +1,8 @@
 import React from "react";
 import Home from './pages/home'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Signup from "./pages/signup";
+import SignIn from "./pages/signin";
 import {
     BrowserRouter as Router,
     Routes,
@@ -17,6 +19,7 @@ class App extends React.Component {
                 <Routes>
                     <Route exact path="/" element={<Home/>}/>
                     <Route path="/sign-up" element={<Signup />}/>
+                    <Route path="/sign-in" element={<SignIn />}/>
                 </Routes>
             </Router>
 
