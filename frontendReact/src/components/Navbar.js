@@ -12,6 +12,7 @@ class NavbarComp extends React.Component{
                     <Navbar.Brand href="/">MainPage</Navbar.Brand>
                         <Nav className="me-auto">
                             <Nav.Link href="/sign-up">Sign up</Nav.Link>
+                            <Nav.Link href="/sign-in">Sign in</Nav.Link>
                         </Nav>
                 </Container>
             </Navbar>
