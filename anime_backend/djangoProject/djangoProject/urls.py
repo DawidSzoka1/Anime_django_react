@@ -26,8 +26,8 @@ router = routers.DefaultRouter()
 router.register(r'main', mainPage_views.MainPageView, 'main')
 
 urlpatterns = [
-    path('', include('mainPage.urls')),
-    path('', include('accounts.urls')),
+    path('api/', include('mainPage.urls')),
+    path('api/account/', include('accounts.urls')),
     path('admin/', admin.site.urls),
 ]
 
