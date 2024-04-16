@@ -3,17 +3,14 @@ import EmailInput from "./EmailInput";
 import PasswordInput from './PasswordInput'
 import {Button, Form} from "react-bootstrap";
 
+const handleSubmit = (e) => {
+    e.preventDefault()
 
-class SignUpForm extends React.Component{
-    handleSubmit = (e) => {
-        e.preventDefault()
+}
+const SignUpForm  = () =>{
 
-    }
-
-    render() {
-
-        return(
-            <Form onSubmit={this.handleSubmit}>
+    return(
+            <Form onSubmit={handleSubmit}>
                 <Form.Label>
                     Sing up
                 </Form.Label>
@@ -26,7 +23,7 @@ class SignUpForm extends React.Component{
                 </div>
             </Form>
         )
-    }
+
 
 }
 

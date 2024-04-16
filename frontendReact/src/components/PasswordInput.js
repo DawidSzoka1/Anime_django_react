@@ -1,27 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import {Form, InputGroup} from "react-bootstrap";
 
 
-class PasswordInput extends React.Component{
-    state={
-        password: "",
-    }
-    handlePasswordChange = e => {
-        this.setState({password: e.target.value});
-    };
+const PasswordInput = () => {
+    const [password, setPassword] = useState('')
 
 
-    render() {
-        return(
-            <InputGroup className="mt-3">
-                <InputGroup.Text id="Email" >
-                    <Form.Control placeholder="password" type='password' onChange={this.handlePasswordChange}
-                                  value={this.state.password}/>
-                </InputGroup.Text>
-            </InputGroup>
-        )
-    }
-
+    return (
+        <InputGroup className="mt-3">
+            <InputGroup.Text id="Email">
+                <Form.Control placeholder="password" type='password'
+                              onChange={(e) => setPassword(e.target.value)}
+                              value={password}/>
+            </InputGroup.Text>
+        </InputGroup>
+    )
 
 }
 

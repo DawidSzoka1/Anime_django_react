@@ -1,27 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import {Form, InputGroup} from "react-bootstrap";
 
 
-class EmailInput extends React.Component{
-    state={
-        email: "",
-    }
-    handleEmailChange = e => {
-        this.setState({email: e.target.value});
-    };
+const EmailInput = () => {
+    const [email, setEmail] = useState('');
 
-
-    render() {
-        return(
-            <InputGroup className="mt-3">
-                <InputGroup.Text id="Email" >
-                    <Form.Control placeholder="Email" type='email' onChange={this.handleEmailChange} value={this.state.email}/>
-                </InputGroup.Text>
-            </InputGroup>
-        )
-    }
-
-
+    return (
+        <InputGroup className="mt-3">
+            <InputGroup.Text id="Email">
+                <Form.Control placeholder="Email" type='email'
+                              onChange={(e) => setEmail(e.target.value)}
+                              value={email}/>
+            </InputGroup.Text>
+        </InputGroup>
+    )
 }
 
 export default EmailInput;

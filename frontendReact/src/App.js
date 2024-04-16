@@ -10,23 +10,18 @@ import {
 } from "react-router-dom";
 import NavbarComp from "./components/Navbar";
 
-class App extends React.Component {
-    render() {
-        return (
+const App = () => {
 
-            <Router>
-                <NavbarComp />
-                <Routes>
-                    <Route exact path="/" element={<Home/>}/>
-                    <Route path="/sign-up" element={<Signup />}/>
-                    <Route path="/sign-in" element={<SignIn />}/>
-                </Routes>
-            </Router>
-
-
-        )
-    }
-
+    return (
+        <Router>
+            <NavbarComp/>
+            <Routes>
+                <Route exact path="/" element={<Home/>}/>
+                <Route path="/sign-up" element={<Signup/>}/>
+                <Route path="/sign-in" element={<SignIn/>}/>
+            </Routes>
+        </Router>
+    )
 
 }
 
