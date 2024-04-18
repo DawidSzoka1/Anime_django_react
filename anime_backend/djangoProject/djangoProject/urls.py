@@ -22,6 +22,7 @@ from django.contrib import admin
 from rest_framework import routers
 from mainPage import views as mainPage_views
 
+
 router = routers.DefaultRouter()
 router.register(r'main', mainPage_views.MainPageView, 'main')
 
