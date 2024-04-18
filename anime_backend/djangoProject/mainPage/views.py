@@ -12,7 +12,7 @@ import json
 
 class MainPageView(View):
     def get(self, request):
-        api_url = 'https://api.jikan.moe/v4/anime'
+        api_url = 'https://api.jikan.moe/v4/anime?anime_search_query_status=airing/'
         json_data = 0
         try:
             response = requests.get(api_url)
@@ -21,15 +21,31 @@ class MainPageView(View):
         except requests.RequestException:
             pass
         # for anime in json_data['data']:
-        #     if anime not in Anime.objects.all():
-        #         Anime.objects.create(anime_data=anime)
-        # for anime in json_data:
-        #     json_data = anime
-        names = [anime['title'] for anime in json_data['data']]
+        #     if not Anime.objects.filter(name=anime['title']).exists():
+        #         Anime.objects.create(
+        #             name=anime['title'],
+        #             description=anime['synopsis'],
+        #             img=anime['images']['jpg']['image_url'],
+        #             trailer=anime['trailer']['url'],
+        #             status=anime['airing'],
+        #             aired=anime['aired']['string'],
+        #             duration=anime['duration'],
+        #             episodes=anime['episodes'],
+        #             redirect=anime['url'],
+        #             broadcast=anime['broadcast']['string'],
+        #             rank=anime['rank'],
+        #             rating=anime['rating'],
+        #             studio_name=anime['studios'][0]['name'],
+        #             type=anime['type']
+        #
+        #         )
 
-        return JsonResponse({'test': f"{names}"}, safe=False)
+        # names = [anime['title'] for anime in json_data['data']]
+        # names = [anime['aired']['from'] for anime in json_data['data']]
+        # names = [anime['aired']['to'] for anime in json_data['data']]
+        # names = [anime['synopsis'] for anime in json_data['data']]
 
-
+        return JsonResponse({'test': f"{json_data}"}, safe=False)
 
 
 class AnimeApiTest(View):
