@@ -50,3 +50,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = 'User'
         verbose_name_plural = 'Users'
+
+
+# class FollowAnime(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='follows')
+#
