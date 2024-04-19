@@ -6,11 +6,11 @@ import axios from "axios";
 
 
 const handleSubmit = (e) => {
-    fetch("https://api.jikan.moe/v4/anime")
+    e.preventDefault()
+        fetch("https://api.jikan.moe/v4/anime")
         .then((resp) => resp.json())
         .then((resp)=> console.log(resp.data))
         .catch((err)=> err)
-    e.preventDefault()
     axios.post('/api/account/sign-up/', {
         email: e.target[0].value,
         password1: e.target[1].value,

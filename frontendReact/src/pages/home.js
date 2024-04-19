@@ -1,13 +1,32 @@
-import React from "react";
-const animeData = await fetch("https://api.jikan.moe/v4/anime")
-    .then((resp) => resp.json())
-    .then((resp)=> resp.data)
-    .catch((err)=> err)
+import React, {useEffect, useState} from "react";
+import axios from "axios";
+
 const Home = () => {
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+            const result = await axios.get('/api/');
+            setData(result.data)
+
+        }
+
+        fetchData();
+    }, []);
 
     return (
         <div>
-            {animeData[0].url}
+            {data.map((el, index) =>(
+                <div id={index}>
+                    <p>{el.name}</p>
+                    <p>{el.description}</p>
+                    <img src={el.img} alt={'obrazke'}/>
+
+                </div>
+                ))}
+
+
         </div>
     )
 }
