@@ -3,6 +3,7 @@ import EmailInput from "./EmailInput";
 import PasswordInput from './PasswordInput'
 import {Button, Form} from "react-bootstrap";
 import axios from "axios";
+import {Navigate} from "react-router-dom";
 
 
 const handleSubmit = async (e) => {
@@ -13,6 +14,7 @@ const handleSubmit = async (e) => {
     })
         .then((resp)=> console.log(resp))
         .catch((err) => console.log(err))
+        return <Navigate to='/'/>
     }
     else{
         console.log("Hasla nie sa takie same")
