@@ -56,16 +56,3 @@ class MainPageView(APIView):
         ]
         return JsonResponse(data, safe=False)
 
-
-class AnimeApiTest(View):
-    def get(self, request):
-        api_url = 'https://api.jikan.moe/v4/anime'
-
-        try:
-            response = requests.get(api_url)
-            if response.status_code == 200:
-                return JsonResponse(response.json(), safe=False)
-            else:
-                return JsonResponse({'error': 'Nie udało się pobrać danych z API'}, status=500)
-        except requests.RequestException as e:
-            return JsonResponse({'error': 'Wystąpił błąd podczas wysyłania zapytania do API'}, status=500)
