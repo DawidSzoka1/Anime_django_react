@@ -21,7 +21,7 @@ const App = () => {
                 <Route exact path="/" element={<Home/>}/>
                 <Route path="/register" element={<Register/>}/>
                 <Route path="/logout" element={
-                    <ProtectedRoute>
+                    <ProtectedRoute logged={true}>
                         <Logout/>
                     </ProtectedRoute>
                 }/>
