@@ -19,12 +19,12 @@ const handleSubmit = async (e) => {
     }
 
 }
-const SignUpForm  = () =>{
+const RegisterForm  = () =>{
 
     return(
             <Form onSubmit={handleSubmit}>
                 <Form.Label>
-                    Sing up
+                    Register
                 </Form.Label>
                 <EmailInput/>
                 <PasswordInput id='password1'/>
@@ -39,4 +39,4 @@ const SignUpForm  = () =>{
 
 }
 
-export default SignUpForm;
+export default RegisterForm;

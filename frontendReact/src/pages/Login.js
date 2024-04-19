@@ -2,7 +2,7 @@ import React from "react";
 import {InputGroup, Form, Button} from "react-bootstrap";
 
 
-const SignIn = () => {
+const Login = () => {
 
     return (
         <div>
@@ -27,4 +27,4 @@ const SignIn = () => {
 
 }
 
-export default SignIn;
+export default Login;
