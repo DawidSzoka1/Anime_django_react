@@ -5,19 +5,19 @@ import {Button, Form} from "react-bootstrap";
 import axios from "axios";
 
 
-const handleSubmit = (e) => {
-    e.preventDefault()
-        fetch("https://api.jikan.moe/v4/anime")
-        .then((resp) => resp.json())
-        .then((resp)=> console.log(resp.data))
-        .catch((err)=> err)
-    axios.post('/api/account/sign-up/', {
+const handleSubmit = async (e) => {
+    if(e.target[1].value === e.target[2].value){
+         await axios.post('/api/account/sign-up/', {
         email: e.target[0].value,
-        password1: e.target[1].value,
-        password2: e.target[2].value,
+        password: e.target[1].value,
     })
         .then((resp)=> console.log(resp))
         .catch((err) => console.log(err))
+    }
+    else{
+        console.log("Hasla nie sa takie same")
+    }
+
 }
 const SignUpForm  = () =>{
 
